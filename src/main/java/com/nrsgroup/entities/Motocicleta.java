@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "motocicletas")
-public class Motocicleta extends Automovil {
+public class Motocicleta extends Vehiculo {
 	
 	@Column (name = "catidad_cilindros")
 	private String cilindrada;
@@ -17,10 +17,15 @@ public class Motocicleta extends Automovil {
 	}
 
 	// CONSTRUCTOR DE LA CLASE
-	public Motocicleta(Integer id, String nombre, String marcas, String tipoCombustible, String velocidadMax,
-			String cilindrada) {
-		super(id, nombre, marcas, tipoCombustible, velocidadMax);
+	public Motocicleta(Integer id, String nombre, String marca, String tipoCombustible, String velocidadMax, String cilindrada) {
+		super();
 		this.cilindrada = cilindrada;
+	}
+	
+	//toSTRING
+	@Override
+	public String toString() {
+		return "MOTOCICLETA: " + super.toString() + "CILINDRADA = " + cilindrada + "";
 	}
 
 	// GETTER Y SETTER

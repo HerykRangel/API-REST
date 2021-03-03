@@ -2,78 +2,38 @@ package com.nrsgroup.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
-//CLASE PADRE
-@Entity
-@Inheritance (strategy =  InheritanceType.TABLE_PER_CLASS)				
-public class Automovil {
+@Entity 
+@Table(name = "autos")
+public class Automovil extends Vehiculo {
 	
-	@Id
-    @GeneratedValue
-    @Column(name = "id", unique = true, nullable = false)
-	private Integer Id;
-	
-	@Column(name = "nombre")
-	private String nombre;
-	
-	@Column (name = "marca")
-	private String marcas;
-	
-	@Column (name = "tipo_combustible")
-	private String tipoCombustible;
-	
-	@Column (name = "velocidad_maxima")
-	private String velocidadMax;
-	
+	@Column (name = "catidad_puertas")
+	private String catidadPuerta;
+
 	// CONSTRUCTOR VACIO
 	public Automovil() {
 		
 	}
-	
-	// CONSTRUCTOR DE LA CLASE 
-	public Automovil(Integer id, String nombre, String marcas, String tipoCombustible, String velocidadMax) {
+
+	// CONSTRUCTOR DE LA CLASE
+	public Automovil(Integer id, String nombre, String marca, String tipoCombustible, String velocidadMax, String catidadPuerta) {
 		super();
-		Id = id;
-		this.nombre = nombre;
-		this.marcas = marcas;
-		this.tipoCombustible = tipoCombustible;
-		this.velocidadMax = velocidadMax;
+		this.catidadPuerta = catidadPuerta;
 	}
 	
-	//GETTERS Y SETTERS
-	public String getNombre() {
-		return nombre;
+	//toSTRING
+	@Override
+	public String toString() {
+		return "AUTOMOVIL: " + super.toString() + "CANTIDAD_PUERTA = " + "catidadPuerta";
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	// GETTER Y SETTER
+	public String getCatidadPuerta() {
+		return catidadPuerta;
 	}
 
-	public String getMarcas() {
-		return marcas;
-	}
-
-	public void setMarcas(String marcas) {
-		this.marcas = marcas;
-	}
-
-	public String getTipoCombustible() {
-		return tipoCombustible;
-	}
-
-	public void setTipoCombustible(String tipoCombustible) {
-		this.tipoCombustible = tipoCombustible;
-	}
-
-	public String getVelocidadMax() {
-		return velocidadMax;
-	}
-
-	public void setVelocidadMax(String velocidadMax) {
-		this.velocidadMax = velocidadMax;
+	public void setCatidadPuerta(String catidadPuerta) {
+		this.catidadPuerta = catidadPuerta;
 	}
 }

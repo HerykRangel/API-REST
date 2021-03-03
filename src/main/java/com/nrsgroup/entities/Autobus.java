@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "autobuses")
-public class Autobus extends Automovil{
+public class Autobus extends Vehiculo{
 	
 	@Column (name = "catidad_ruedas")
 	private String cantidadRueda;
@@ -17,9 +17,15 @@ public class Autobus extends Automovil{
 	}
 
 	//CONSTRUCTOR DE LA CLASE
-	public Autobus(String nombre, String marcas, String tipoCombustible, String velocidadMax, String cantidadRueda) {
+	public Autobus(Integer id, String nombre, String marca, String tipoCombustible, String velocidadMax, String cantidadRueda) {
 		super();
 		this.cantidadRueda = cantidadRueda;
+	}
+	
+	// toSTRING
+	@Override
+	public String toString() {
+		return "AUTOBUS" + super.toString() + "CATIDAD_RUEDAS = " + cantidadRueda;
 	}
 
 	// GETTER Y SETTER
