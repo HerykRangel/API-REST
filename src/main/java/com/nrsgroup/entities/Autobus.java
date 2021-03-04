@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table (name = "autobuses")
 public class Autobus extends Vehiculo{
 	
-	@Column (name = "catidad_ruedas")
+	@Column (name = "cantidad_ruedas")
 	private String cantidadRueda;
 
 	// CONSTRUCTOR VACIO

@@ -8,8 +8,8 @@ import javax.persistence.Table;
 @Table(name = "autos")
 public class Automovil extends Vehiculo {
 	
-	@Column (name = "catidad_puertas")
-	private String catidadPuerta;
+	@Column (name = "cantidad_puertas")
+	private String cantidadPuerta;
 
 	// CONSTRUCTOR VACIO
 	public Automovil() {
@@ -19,7 +19,7 @@ public class Automovil extends Vehiculo {
 	// CONSTRUCTOR DE LA CLASE
 	public Automovil(Integer id, String nombre, String marca, String tipoCombustible, String velocidadMax, String catidadPuerta) {
 		super();
-		this.catidadPuerta = catidadPuerta;
+		this.cantidadPuerta = catidadPuerta;
 	}
 	
 	//toSTRING
@@ -30,10 +30,10 @@ public class Automovil extends Vehiculo {
 
 	// GETTER Y SETTER
 	public String getCatidadPuerta() {
-		return catidadPuerta;
+		return cantidadPuerta;
 	}
 
 	public void setCatidadPuerta(String catidadPuerta) {
-		this.catidadPuerta = catidadPuerta;
+		this.cantidadPuerta = catidadPuerta;
 	}
 }
